@@ -9,6 +9,10 @@
 	<description>lista de pendientes</description>
 
 	<properties>
+	
+		<!-- Version de Java -->
+		<java.version>1.6</java.version>
+		
 		<!-- Version de modulos de spring -->
 		<spring.version>4.2.3.RELEASE</spring.version>
 
@@ -133,7 +137,19 @@
 			<artifactId>h2</artifactId>
 			<version>1.4.190</version>
 		</dependency>
-		<!-- base de datos -->
-	    
+		<!-- base de datos -->		
+
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>	
 </project>
