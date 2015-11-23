@@ -19,6 +19,7 @@
 		<jackson.version>2.4.3</jackson.version>
 	</properties>
 	<dependencies>
+		<!-- Modulos de spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -102,19 +103,17 @@
 			<artifactId>spring-webmvc-portlet</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.190</version>
-		</dependency>
-
+		<!-- Modulos de spring -->
+		
+		<!-- Hibernate implementacion jpa 2.1 -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
+		<!-- Hibernate implementacion jpa 2.1 -->
 		
+		<!-- jackson -->
 	    <dependency>
 	        <groupId>com.fasterxml.jackson.core</groupId>
 	        <artifactId>jackson-core</artifactId>
@@ -126,5 +125,15 @@
 	        <artifactId>jackson-databind</artifactId>
 	        <version>${jackson.version}</version>
 	    </dependency>
+	    <!-- jackson -->
+	    
+	    <!-- base de datos -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.190</version>
+		</dependency>
+		<!-- base de datos -->
+	    
 	</dependencies>
 </project>
