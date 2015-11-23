@@ -1,3 +1,3 @@
 Angular TODO
 ============
-Simple TODO web application based in MEAN (Mongo, Express, Angular, Node) stack
+Simple TODO web application based in Spring, Hibernate and Angular.
