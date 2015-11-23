@@ -3,10 +3,11 @@
 var angularTodo = angular.module('angularTodo', []);
 
 function mainController($scope, $http) {
+	var apiUrl = 'http://localhost:8080/todo/api/todos/';
 	$scope.formData = {};
 
 	// Cuando se cargue la página, pide del API todos los TODOs
-	$http.get('/api/todos')
+	$http.get(apiUrl)
 		.success(function(data) {
 			$scope.todos = data;
 			console.log(data)
@@ -17,10 +18,10 @@ function mainController($scope, $http) {
 
 	// Cuando se añade un nuevo TODO, manda el texto a la API
 	$scope.createTodo = function(){
-		$http.post('/api/todos', $scope.formData)
+		$http.post(apiUrl, $scope.formData)
 			.success(function(data) {
 				$scope.formData = {};
-				$scope.todos = data;
+				$scope.todos.push(data);
 				console.log(data);
 			})
 			.error(function(data) {
@@ -30,9 +31,9 @@ function mainController($scope, $http) {
 
 	// Borra un TODO despues de checkearlo como acabado
 	$scope.deleteTodo = function(id) {
-		$http.delete('/api/todos/' + id)
+		$http.delete(apiUrl + id)
 			.success(function(data) {
-				$scope.todos = data;
+				findAndRemove($scope.todos, 'id', data.id);
 				console.log(data);
 			})
 			.error(function(data) {
@@ -40,3 +41,12 @@ function mainController($scope, $http) {
 			});
 	};
 }
+
+function findAndRemove(array, property, value) {
+	  array.forEach(function(result, index) {
+	    if(result[property] === value) {
+	      array.splice(index, 1);
+	    }    
+	  });
+	}
+	
