@@ -41,7 +41,9 @@ public class TodoDao {
 	
 	public Todo deleteById(int id){
 		Todo todo = em.find(Todo.class, id);
-		em.remove(todo);
+		if(todo != null){
+			em.remove(todo);
+		}
 		return todo;
 	}
 }
