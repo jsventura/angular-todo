@@ -16,7 +16,7 @@ import com.todo.model.Todo;
 public class TodoDao {
 	
 	@PersistenceContext
-	EntityManager em;
+	private EntityManager em;
 	
 	public Todo save(Todo todo){
 		em.persist(todo);
