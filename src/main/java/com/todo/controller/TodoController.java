@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.todo.dao.TodoDao;
@@ -47,11 +46,5 @@ public class TodoController {
 	@RequestMapping(value = "/{id}" , method = RequestMethod.DELETE)
 	public Todo deleteTodo(@PathVariable("id") int id){
 		return todoDao.deleteById(id);
-	}	
-	
-	@RequestMapping(value = "test", method = RequestMethod.GET)
-	@ResponseBody
-	public String holaMundo(){
-		return "Hola Mundo";
 	}
 }
