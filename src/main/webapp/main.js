@@ -3,7 +3,7 @@
 var angularTodo = angular.module('angularTodo', []);
 
 function mainController($scope, $http) {
-	var apiUrl = 'http://localhost:8080/todo/api/todos/';
+	var apiUrl = '/todo/api/todos/';
 	$scope.formData = {};
 
 	// Cuando se cargue la página, pide del API todos los TODOs
